@@ -1,0 +1,10 @@
+Display:
+https://www.aliexpress.com/item/32957159545.html?spm=a2g0o.productlist.0.0.1fd620f0jA5K5o&s=p&ad_pvid=202007011057148497041569369460001778846_1&algo_pvid=d753b282-604b-41c3-bc47-36849772adad&algo_expid=d753b282-604b-41c3-bc47-36849772adad-0&btsid=0b0a187b15936262341258115e72f0&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+Encoders:
+https://www.aliexpress.com/item/32877997262.html?spm=a2g0o.detail.1000014.13.76559c41XRl2w3&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.13338.170725.0&scm_id=1007.13338.170725.0&scm-url=1007.13338.170725.0&pvid=ddb1d533-db12-44eb-bd18-f70961a5941c&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.13338.170725.0,pvid:ddb1d533-db12-44eb-bd18-f70961a5941c,tpp_buckets:668%230%23131923%230_668%23808%235965%23320_668%23888%233325%2318_3338%230%23170725%230_3338%233142%239890%237_668%232846%238115%23878_668%232717%237564%23655_
+
+I2C Mux:
+https://www.aliexpress.com/item/32969977083.html?spm=a2g0o.productlist.0.0.36a75146QrSjkq&algo_pvid=5a3ec4ee-74c6-4906-8554-e2d432d43a6e&algo_expid=5a3ec4ee-74c6-4906-8554-e2d432d43a6e-0&btsid=0b0a0ad815936249849953215e0709&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+
