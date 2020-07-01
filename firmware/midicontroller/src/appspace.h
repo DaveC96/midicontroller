@@ -2,14 +2,16 @@
 #define APPSPACE_H
 
 #include <stdint.h>
+#include "consts.h"
 
 struct ControllerConfig
 {
-    char[]  userLabel[8];
-    uint8_t controllerID[8];
-    uint8_t minVal[8];
-    uint8_t maxVal[8];
-    bool    latching[8];
+    char[]  userLabel[NUM_LAYERS];
+    uint8_t controllerID[NUM_LAYERS];
+    uint8_t minVal[NUM_LAYERS];
+    uint8_t maxVal[NUM_LAYERS];
+    uint8_t curVal[NUM_LAYERS];
+    uint8_t latchingBitmask;
 };
 
 struct AppSpace
@@ -17,6 +19,7 @@ struct AppSpace
     ControllerConfig controllers[8];
     uint8_t midiChannel[8];
     uint8_t currentMode;
+    uint8_t currentLayer;
 };
 
 #endif
