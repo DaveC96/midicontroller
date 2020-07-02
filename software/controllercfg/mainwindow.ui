@@ -29,6 +29,9 @@
      </property>
      <item row="1" column="2">
       <widget class="QGroupBox" name="groupBox_7">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 7</string>
        </property>
@@ -42,38 +45,6 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_9">
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_13">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Min</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QSpinBox" name="spinBox_13">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0" colspan="2">
           <widget class="QLineEdit" name="lineEdit_7">
            <property name="text">
@@ -81,7 +52,20 @@
            </property>
           </widget>
          </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_24"/>
+         </item>
+         <item row="3" column="1">
           <widget class="QLabel" name="label_14">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -103,37 +87,11 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
+         <item row="4" column="1">
           <widget class="QSpinBox" name="spinBox_14"/>
          </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox_7">
-           <property name="text">
-            <string>Latched push</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QGroupBox" name="groupBox_5">
-       <property name="title">
-        <string>Controller 5</string>
-       </property>
-       <widget class="QWidget" name="gridLayoutWidget_7">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>20</y>
-          <width>167</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_7">
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_9">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_13">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -154,8 +112,15 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QSpinBox" name="spinBox_9">
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBox_7">
+           <property name="text">
+            <string>Latched push</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QSpinBox" name="spinBox_13">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -164,14 +129,29 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLineEdit" name="lineEdit_5">
-           <property name="text">
-            <string>Label</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="title">
+        <string>Controller 5</string>
+       </property>
+       <widget class="QWidget" name="gridLayoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>167</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="3" column="1">
           <widget class="QLabel" name="label_10">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -193,7 +173,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
+         <item row="4" column="1">
           <widget class="QSpinBox" name="spinBox_10"/>
          </item>
          <item row="1" column="0" colspan="2">
@@ -203,12 +183,67 @@
            </property>
           </widget>
          </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Min</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QLineEdit" name="lineEdit_5">
+           <property name="text">
+            <string>Label</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QSpinBox" name="spinBox_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_22"/>
+         </item>
         </layout>
        </widget>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QGroupBox" name="groupBox_6">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 6</string>
        </property>
@@ -222,7 +257,17 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
-         <item row="2" column="0">
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBox_6">
+           <property name="text">
+            <string>Latched push</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBox_12"/>
+         </item>
+         <item row="3" column="0">
           <widget class="QLabel" name="label_11">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -244,7 +289,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QSpinBox" name="spinBox_11">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -261,7 +306,7 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QLabel" name="label_12">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -283,15 +328,18 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_12"/>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox_6">
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_25">
            <property name="text">
-            <string>Latched push</string>
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_23"/>
          </item>
         </layout>
        </widget>
@@ -299,6 +347,9 @@
      </item>
      <item row="0" column="3">
       <widget class="QGroupBox" name="groupBox_4">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 4</string>
        </property>
@@ -312,7 +363,7 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_6">
-         <item row="2" column="0">
+         <item row="3" column="0">
           <widget class="QLabel" name="label_7">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -334,7 +385,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QSpinBox" name="spinBox_7">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -344,14 +395,7 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLineEdit" name="lineEdit_4">
-           <property name="text">
-            <string>Label</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QLabel" name="label_8">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -373,8 +417,22 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_8"/>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBox_8">
+           <property name="maximum">
+            <number>127</number>
+           </property>
+           <property name="value">
+            <number>127</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QLineEdit" name="lineEdit_4">
+           <property name="text">
+            <string>Label</string>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0" colspan="2">
           <widget class="QCheckBox" name="checkBox_4">
@@ -383,12 +441,28 @@
            </property>
           </widget>
          </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_21"/>
+         </item>
         </layout>
        </widget>
       </widget>
      </item>
      <item row="1" column="3">
       <widget class="QGroupBox" name="groupBox_8">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 8</string>
        </property>
@@ -402,7 +476,7 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_10">
-         <item row="2" column="0">
+         <item row="3" column="0">
           <widget class="QLabel" name="label_15">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -424,16 +498,6 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QSpinBox" name="spinBox_15">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0" colspan="2">
           <widget class="QLineEdit" name="lineEdit_8">
            <property name="text">
@@ -441,7 +505,7 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QLabel" name="label_16">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -463,9 +527,6 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_16"/>
-         </item>
          <item row="1" column="0" colspan="2">
           <widget class="QCheckBox" name="checkBox_8">
            <property name="text">
@@ -473,14 +534,46 @@
            </property>
           </widget>
          </item>
+         <item row="4" column="0">
+          <widget class="QSpinBox" name="spinBox_15">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBox_16"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_25"/>
+         </item>
         </layout>
        </widget>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QGroupBox" name="groupBox_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 2</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
        <widget class="QWidget" name="gridLayoutWidget_4">
         <property name="geometry">
@@ -492,7 +585,7 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
-         <item row="2" column="0">
+         <item row="3" column="0">
           <widget class="QLabel" name="label_3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -514,13 +607,30 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QSpinBox" name="spinBox_3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBox_4">
+           <property name="maximum">
+            <number>127</number>
+           </property>
+           <property name="value">
+            <number>127</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBox_2">
+           <property name="text">
+            <string>Latched push</string>
            </property>
           </widget>
          </item>
@@ -531,7 +641,7 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QLabel" name="label_4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -553,13 +663,19 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_4"/>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_19"/>
          </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox_2">
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
-            <string>Latched push</string>
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -582,47 +698,8 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="2" column="0">
-          <widget class="QLabel" name="label">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Min</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QSpinBox" name="spinBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="text">
-            <string>Label</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="label_2">
+         <item row="3" column="1">
+          <widget class="QLabel" name="c1_labelMax">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -643,13 +720,75 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_2"/>
+         <item row="4" column="0">
+          <widget class="QSpinBox" name="c1_spinboxMin">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="c1_labelMin">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Min</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="c1_spinboxMax">
+           <property name="maximum">
+            <number>127</number>
+           </property>
+           <property name="value">
+            <number>127</number>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QCheckBox" name="c1_checkboxLatch">
            <property name="text">
             <string>Latched push</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QLineEdit" name="c1_lineeditName">
+           <property name="text">
+            <string>Label</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="c1_spinboxCC"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="c1_labelCC">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -659,6 +798,9 @@
      </item>
      <item row="0" column="2">
       <widget class="QGroupBox" name="groupBox_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="title">
         <string>Controller 3</string>
        </property>
@@ -672,7 +814,7 @@
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_5">
-         <item row="2" column="0">
+         <item row="3" column="0">
           <widget class="QLabel" name="label_5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -694,16 +836,6 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QSpinBox" name="spinBox_5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0" colspan="2">
           <widget class="QLineEdit" name="lineEdit_3">
            <property name="text">
@@ -711,7 +843,24 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBox_3">
+           <property name="text">
+            <string>Latched push</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>CC #:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
           <widget class="QLabel" name="label_6">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -733,15 +882,28 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="spinBox_6"/>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox_3">
-           <property name="text">
-            <string>Latched push</string>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBox_6">
+           <property name="maximum">
+            <number>127</number>
+           </property>
+           <property name="value">
+            <number>127</number>
            </property>
           </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QSpinBox" name="spinBox_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinBox_20"/>
          </item>
         </layout>
        </widget>
@@ -830,56 +992,59 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QRadioButton" name="rb_layer1">
        <property name="text">
         <string>Layer 1</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QRadioButton" name="rb_layer2">
        <property name="text">
         <string>Layer 2</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QRadioButton" name="rb_layer3">
        <property name="text">
         <string>Layer 3</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QRadioButton" name="rb_layer4">
        <property name="text">
         <string>Layer 4</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QRadioButton" name="rb_layer5">
        <property name="text">
         <string>Layer 5</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_8">
+      <widget class="QRadioButton" name="rb_layer6">
        <property name="text">
         <string>Layer 6</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_9">
+      <widget class="QRadioButton" name="rb_layer7">
        <property name="text">
         <string>Layer 7</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QRadioButton" name="rb_layer8">
        <property name="text">
         <string>Layer 8</string>
        </property>

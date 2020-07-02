@@ -1,25 +1,25 @@
-#ifndef APPSPACE_H
-#define APPSPACE_H
+#ifndef MODEL_H
+#define MODEL_H
 
 #include <stdint.h>
-#include "consts.h"
+#include <QApplication>
 
-struct ControllerConfig
-{
-    char[]  userLabel[NUM_LAYERS];
+#define NUM_LAYERS 8
+#define NUM_CONTROLLERS 8
+
+struct ControllerConfig {
+    QString userLabel[NUM_LAYERS];
     uint8_t controllerID[NUM_LAYERS];
     uint8_t minVal[NUM_LAYERS];
     uint8_t maxVal[NUM_LAYERS];
     uint8_t curVal[NUM_LAYERS];
-    uint8_t latchingBitmask;
+    bool latching[NUM_LAYERS];
 };
 
-struct AppSpace
-{
+struct AppModel {
     ControllerConfig controllers[NUM_CONTROLLERS];
-    uint8_t midiChannel[NUM_LAYERS];
-    uint8_t currentMode;
     uint8_t currentLayer;
 };
 
-#endif
+
+#endif // MODEL_H
