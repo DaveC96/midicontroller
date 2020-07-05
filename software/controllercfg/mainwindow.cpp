@@ -124,6 +124,7 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 void MainWindow::on_pushButton_2_clicked()
 {
     printf("Breakpoint hit, go read your debugger, nerd.");
+    int a = sizeof(ControllerConfig);
 }
 
 void MainWindow::on_rb_layer1_clicked() {   this->changeLayers();   }

@@ -5,7 +5,7 @@
 #include <QApplication>
 
 #define NUM_LAYERS 8
-#define NUM_CONTROLLERS 8
+#define NUM_CONTROLLERS 4
 
 struct ControllerConfig {
     QString userLabel[NUM_LAYERS];
@@ -14,6 +14,7 @@ struct ControllerConfig {
     uint8_t maxVal[NUM_LAYERS];
     uint8_t curVal[NUM_LAYERS];
     bool latching[NUM_LAYERS];
+    uint8_t midiChannel[NUM_LAYERS];
 };
 
 struct AppModel {
