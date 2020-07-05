@@ -20,8 +20,25 @@ public:
 
 private slots:
     void on_c1_checkboxLatch_stateChanged();
+    void on_c2_checkboxLatch_stateChanged();
+    void on_c3_checkboxLatch_stateChanged();
+    void on_c4_checkboxLatch_stateChanged();
     void on_c1_lineeditName_returnPressed();
-    void on_c1_spinboxCC_valueChanged(int arg1);
+    void on_c2_lineeditName_returnPressed();
+    void on_c3_lineeditName_returnPressed();
+    void on_c4_lineeditName_returnPressed();
+    void on_c1_spinboxCC_valueChanged();
+    void on_c2_spinboxCC_valueChanged();
+    void on_c3_spinboxCC_valueChanged();
+    void on_c4_spinboxCC_valueChanged();
+    void on_c1_spinboxMin_valueChanged();
+    void on_c2_spinboxMin_valueChanged();
+    void on_c3_spinboxMin_valueChanged();
+    void on_c4_spinboxMin_valueChanged();
+    void on_c1_spinboxMax_valueChanged();
+    void on_c2_spinboxMax_valueChanged();
+    void on_c3_spinboxMax_valueChanged();
+    void on_c4_spinboxMax_valueChanged();
     void on_pushButton_2_clicked();
     void on_rb_layer1_clicked();
     void on_rb_layer2_clicked();
@@ -32,13 +49,20 @@ private slots:
     void on_rb_layer7_clicked();
     void on_rb_layer8_clicked();
 
+
+
+
+
 private:
     Ui::MainWindow *ui;
     AppModel * model;
 
-    void changeLayers();
-    void setControllerLatch(int id, QCheckBox * element);
-    void setUserLabel(int id, QLineEdit * element);
+    void changeLayers       ();
+    void setControllerLatch (int id, QCheckBox * element);
+    void setUserLabel       (int id, QLineEdit * element);
+    void setControllerCC    (int id, QSpinBox * element);
+    void setControllerMin   (int id, QSpinBox * element);
+    void setControllerMax   (int id, QSpinBox * element);
 };
 
 #endif // MAINWINDOW_H

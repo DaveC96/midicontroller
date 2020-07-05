@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[15];
-    char stringdata0[304];
+    QByteArrayData data[31];
+    char stringdata0[824];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,23 +35,56 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 32), // "on_c1_checkboxLatch_stateChanged"
 QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 32), // "on_c1_lineeditName_returnPressed"
-QT_MOC_LITERAL(4, 78, 28), // "on_c1_spinboxCC_valueChanged"
-QT_MOC_LITERAL(5, 107, 4), // "arg1"
-QT_MOC_LITERAL(6, 112, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(7, 136, 20), // "on_rb_layer1_clicked"
-QT_MOC_LITERAL(8, 157, 20), // "on_rb_layer2_clicked"
-QT_MOC_LITERAL(9, 178, 20), // "on_rb_layer3_clicked"
-QT_MOC_LITERAL(10, 199, 20), // "on_rb_layer4_clicked"
-QT_MOC_LITERAL(11, 220, 20), // "on_rb_layer5_clicked"
-QT_MOC_LITERAL(12, 241, 20), // "on_rb_layer6_clicked"
-QT_MOC_LITERAL(13, 262, 20), // "on_rb_layer7_clicked"
-QT_MOC_LITERAL(14, 283, 20) // "on_rb_layer8_clicked"
+QT_MOC_LITERAL(3, 45, 32), // "on_c2_checkboxLatch_stateChanged"
+QT_MOC_LITERAL(4, 78, 32), // "on_c3_checkboxLatch_stateChanged"
+QT_MOC_LITERAL(5, 111, 32), // "on_c4_checkboxLatch_stateChanged"
+QT_MOC_LITERAL(6, 144, 32), // "on_c1_lineeditName_returnPressed"
+QT_MOC_LITERAL(7, 177, 32), // "on_c2_lineeditName_returnPressed"
+QT_MOC_LITERAL(8, 210, 32), // "on_c3_lineeditName_returnPressed"
+QT_MOC_LITERAL(9, 243, 32), // "on_c4_lineeditName_returnPressed"
+QT_MOC_LITERAL(10, 276, 28), // "on_c1_spinboxCC_valueChanged"
+QT_MOC_LITERAL(11, 305, 28), // "on_c2_spinboxCC_valueChanged"
+QT_MOC_LITERAL(12, 334, 28), // "on_c3_spinboxCC_valueChanged"
+QT_MOC_LITERAL(13, 363, 28), // "on_c4_spinboxCC_valueChanged"
+QT_MOC_LITERAL(14, 392, 29), // "on_c1_spinboxMin_valueChanged"
+QT_MOC_LITERAL(15, 422, 29), // "on_c2_spinboxMin_valueChanged"
+QT_MOC_LITERAL(16, 452, 29), // "on_c3_spinboxMin_valueChanged"
+QT_MOC_LITERAL(17, 482, 29), // "on_c4_spinboxMin_valueChanged"
+QT_MOC_LITERAL(18, 512, 29), // "on_c1_spinboxMax_valueChanged"
+QT_MOC_LITERAL(19, 542, 29), // "on_c2_spinboxMax_valueChanged"
+QT_MOC_LITERAL(20, 572, 29), // "on_c3_spinboxMax_valueChanged"
+QT_MOC_LITERAL(21, 602, 29), // "on_c4_spinboxMax_valueChanged"
+QT_MOC_LITERAL(22, 632, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(23, 656, 20), // "on_rb_layer1_clicked"
+QT_MOC_LITERAL(24, 677, 20), // "on_rb_layer2_clicked"
+QT_MOC_LITERAL(25, 698, 20), // "on_rb_layer3_clicked"
+QT_MOC_LITERAL(26, 719, 20), // "on_rb_layer4_clicked"
+QT_MOC_LITERAL(27, 740, 20), // "on_rb_layer5_clicked"
+QT_MOC_LITERAL(28, 761, 20), // "on_rb_layer6_clicked"
+QT_MOC_LITERAL(29, 782, 20), // "on_rb_layer7_clicked"
+QT_MOC_LITERAL(30, 803, 20) // "on_rb_layer8_clicked"
 
     },
     "MainWindow\0on_c1_checkboxLatch_stateChanged\0"
-    "\0on_c1_lineeditName_returnPressed\0"
-    "on_c1_spinboxCC_valueChanged\0arg1\0"
+    "\0on_c2_checkboxLatch_stateChanged\0"
+    "on_c3_checkboxLatch_stateChanged\0"
+    "on_c4_checkboxLatch_stateChanged\0"
+    "on_c1_lineeditName_returnPressed\0"
+    "on_c2_lineeditName_returnPressed\0"
+    "on_c3_lineeditName_returnPressed\0"
+    "on_c4_lineeditName_returnPressed\0"
+    "on_c1_spinboxCC_valueChanged\0"
+    "on_c2_spinboxCC_valueChanged\0"
+    "on_c3_spinboxCC_valueChanged\0"
+    "on_c4_spinboxCC_valueChanged\0"
+    "on_c1_spinboxMin_valueChanged\0"
+    "on_c2_spinboxMin_valueChanged\0"
+    "on_c3_spinboxMin_valueChanged\0"
+    "on_c4_spinboxMin_valueChanged\0"
+    "on_c1_spinboxMax_valueChanged\0"
+    "on_c2_spinboxMax_valueChanged\0"
+    "on_c3_spinboxMax_valueChanged\0"
+    "on_c4_spinboxMax_valueChanged\0"
     "on_pushButton_2_clicked\0on_rb_layer1_clicked\0"
     "on_rb_layer2_clicked\0on_rb_layer3_clicked\0"
     "on_rb_layer4_clicked\0on_rb_layer5_clicked\0"
@@ -66,7 +99,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      29,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,23 +107,57 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x08 /* Private */,
-       3,    0,   75,    2, 0x08 /* Private */,
-       4,    1,   76,    2, 0x08 /* Private */,
-       6,    0,   79,    2, 0x08 /* Private */,
-       7,    0,   80,    2, 0x08 /* Private */,
-       8,    0,   81,    2, 0x08 /* Private */,
-       9,    0,   82,    2, 0x08 /* Private */,
-      10,    0,   83,    2, 0x08 /* Private */,
-      11,    0,   84,    2, 0x08 /* Private */,
-      12,    0,   85,    2, 0x08 /* Private */,
-      13,    0,   86,    2, 0x08 /* Private */,
-      14,    0,   87,    2, 0x08 /* Private */,
+       1,    0,  159,    2, 0x08 /* Private */,
+       3,    0,  160,    2, 0x08 /* Private */,
+       4,    0,  161,    2, 0x08 /* Private */,
+       5,    0,  162,    2, 0x08 /* Private */,
+       6,    0,  163,    2, 0x08 /* Private */,
+       7,    0,  164,    2, 0x08 /* Private */,
+       8,    0,  165,    2, 0x08 /* Private */,
+       9,    0,  166,    2, 0x08 /* Private */,
+      10,    0,  167,    2, 0x08 /* Private */,
+      11,    0,  168,    2, 0x08 /* Private */,
+      12,    0,  169,    2, 0x08 /* Private */,
+      13,    0,  170,    2, 0x08 /* Private */,
+      14,    0,  171,    2, 0x08 /* Private */,
+      15,    0,  172,    2, 0x08 /* Private */,
+      16,    0,  173,    2, 0x08 /* Private */,
+      17,    0,  174,    2, 0x08 /* Private */,
+      18,    0,  175,    2, 0x08 /* Private */,
+      19,    0,  176,    2, 0x08 /* Private */,
+      20,    0,  177,    2, 0x08 /* Private */,
+      21,    0,  178,    2, 0x08 /* Private */,
+      22,    0,  179,    2, 0x08 /* Private */,
+      23,    0,  180,    2, 0x08 /* Private */,
+      24,    0,  181,    2, 0x08 /* Private */,
+      25,    0,  182,    2, 0x08 /* Private */,
+      26,    0,  183,    2, 0x08 /* Private */,
+      27,    0,  184,    2, 0x08 /* Private */,
+      28,    0,  185,    2, 0x08 /* Private */,
+      29,    0,  186,    2, 0x08 /* Private */,
+      30,    0,  187,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -111,20 +178,38 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_c1_checkboxLatch_stateChanged(); break;
-        case 1: _t->on_c1_lineeditName_returnPressed(); break;
-        case 2: _t->on_c1_spinboxCC_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->on_pushButton_2_clicked(); break;
-        case 4: _t->on_rb_layer1_clicked(); break;
-        case 5: _t->on_rb_layer2_clicked(); break;
-        case 6: _t->on_rb_layer3_clicked(); break;
-        case 7: _t->on_rb_layer4_clicked(); break;
-        case 8: _t->on_rb_layer5_clicked(); break;
-        case 9: _t->on_rb_layer6_clicked(); break;
-        case 10: _t->on_rb_layer7_clicked(); break;
-        case 11: _t->on_rb_layer8_clicked(); break;
+        case 1: _t->on_c2_checkboxLatch_stateChanged(); break;
+        case 2: _t->on_c3_checkboxLatch_stateChanged(); break;
+        case 3: _t->on_c4_checkboxLatch_stateChanged(); break;
+        case 4: _t->on_c1_lineeditName_returnPressed(); break;
+        case 5: _t->on_c2_lineeditName_returnPressed(); break;
+        case 6: _t->on_c3_lineeditName_returnPressed(); break;
+        case 7: _t->on_c4_lineeditName_returnPressed(); break;
+        case 8: _t->on_c1_spinboxCC_valueChanged(); break;
+        case 9: _t->on_c2_spinboxCC_valueChanged(); break;
+        case 10: _t->on_c3_spinboxCC_valueChanged(); break;
+        case 11: _t->on_c4_spinboxCC_valueChanged(); break;
+        case 12: _t->on_c1_spinboxMin_valueChanged(); break;
+        case 13: _t->on_c2_spinboxMin_valueChanged(); break;
+        case 14: _t->on_c3_spinboxMin_valueChanged(); break;
+        case 15: _t->on_c4_spinboxMin_valueChanged(); break;
+        case 16: _t->on_c1_spinboxMax_valueChanged(); break;
+        case 17: _t->on_c2_spinboxMax_valueChanged(); break;
+        case 18: _t->on_c3_spinboxMax_valueChanged(); break;
+        case 19: _t->on_c4_spinboxMax_valueChanged(); break;
+        case 20: _t->on_pushButton_2_clicked(); break;
+        case 21: _t->on_rb_layer1_clicked(); break;
+        case 22: _t->on_rb_layer2_clicked(); break;
+        case 23: _t->on_rb_layer3_clicked(); break;
+        case 24: _t->on_rb_layer4_clicked(); break;
+        case 25: _t->on_rb_layer5_clicked(); break;
+        case 26: _t->on_rb_layer6_clicked(); break;
+        case 27: _t->on_rb_layer7_clicked(); break;
+        case 28: _t->on_rb_layer8_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {
@@ -156,13 +241,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 29;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 29)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 29;
     }
     return _id;
 }
