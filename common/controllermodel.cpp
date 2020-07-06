@@ -81,7 +81,7 @@ bool ControllerModel::getLatching(uint8_t layer)
 
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Utility
 uint8_t * ControllerModel::serialise()
-// I hate everything about this
+// Don't look at me, I'm hideous
 {
     size_t bufferSize = 0;
     bufferSize += sizeof(size_t);           // Length of model
@@ -90,12 +90,12 @@ uint8_t * ControllerModel::serialise()
         bufferSize = bufferSize         +
             sizeof(uint8_t)             +   // Length of userLabel
             this->userLabel[i].size()   +
-            sizeof(this->controllerID)  +
-            sizeof(this->minVal)        +
-            sizeof(this->maxVal)        +
-            sizeof(this->curVal)        +
-            sizeof(this->midiChannel)   +
-            sizeof(this->latching);
+            sizeof(this->controllerID[i])  +
+            sizeof(this->minVal[i])        +
+            sizeof(this->maxVal[i])        +
+            sizeof(this->curVal[i])        +
+            sizeof(this->midiChannel[i])   +
+            sizeof(this->latching[i]);
     }
 
     static uint8_t * buffer = new uint8_t[bufferSize];
