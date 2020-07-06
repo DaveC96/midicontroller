@@ -19,6 +19,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 //  Funnel setter functions
 
@@ -52,14 +53,14 @@ void MainWindow::changeLayers()
     ui->c2_spinboxCC    ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
     ui->c3_spinboxCC    ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
     ui->c4_spinboxCC    ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
-    ui->c1_spinboxMin   ->setValue  (this->model->controllers[0].getControllerIDs()[this->model->currentLayer]);
-    ui->c2_spinboxMin   ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
-    ui->c3_spinboxMin   ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
-    ui->c4_spinboxMin   ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
-    ui->c1_spinboxMax   ->setValue  (this->model->controllers[0].getControllerIDs()[this->model->currentLayer]);
-    ui->c2_spinboxMax   ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
-    ui->c3_spinboxMax   ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
-    ui->c4_spinboxMax   ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
+    ui->c1_spinboxMin   ->setValue  (this->model->controllers[0].getMinVals()[this->model->currentLayer]);
+    ui->c2_spinboxMin   ->setValue  (this->model->controllers[1].getMinVals()[this->model->currentLayer]);
+    ui->c3_spinboxMin   ->setValue  (this->model->controllers[2].getMinVals()[this->model->currentLayer]);
+    ui->c4_spinboxMin   ->setValue  (this->model->controllers[3].getMinVals()[this->model->currentLayer]);
+    ui->c1_spinboxMax   ->setValue  (this->model->controllers[0].getMaxVals()[this->model->currentLayer]);
+    ui->c2_spinboxMax   ->setValue  (this->model->controllers[1].getMaxVals()[this->model->currentLayer]);
+    ui->c3_spinboxMax   ->setValue  (this->model->controllers[2].getMaxVals()[this->model->currentLayer]);
+    ui->c4_spinboxMax   ->setValue  (this->model->controllers[3].getMaxVals()[this->model->currentLayer]);
 
 
 
@@ -96,6 +97,7 @@ void MainWindow::setControllerMax(int id, QSpinBox * element)
     this->model->controllers[id].setMaxVal(this->model->currentLayer, element->value());
 }
 
+
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 //  Controller UI callbacks
 
@@ -125,7 +127,11 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 
 void MainWindow::on_glob_buttonWrite_clicked()
 {
+    uint8_t * layer0 = this->model->controllers[0].serialise();
+
+
     printf("Breakpoint hit, go read your debugger, nerd.\n");
+
 }
 
 void MainWindow::on_glob_buttonLoad_clicked()

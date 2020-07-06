@@ -1,4 +1,6 @@
 #include "controllermodel.h"
+#include <typeinfo>
+#include <iostream>
 
 
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Setters
@@ -78,10 +80,50 @@ bool ControllerModel::getLatching(uint8_t layer)
 
 
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Utility
-std::ostream& ControllerModel::serialise(std::ostream& os) const
+uint8_t * ControllerModel::serialise()
+// I hate everything about this
 {
-    //TODO
-    return os;
+    size_t bufferSize = 0;
+    bufferSize += sizeof(size_t);           // Length of model
+    for (uint8_t i = 0; i < NUM_LAYERS; i++)
+    {
+        bufferSize = bufferSize         +
+            sizeof(uint8_t)             +   // Length of userLabel
+            this->userLabel[i].size()   +
+            sizeof(this->controllerID)  +
+            sizeof(this->minVal)        +
+            sizeof(this->maxVal)        +
+            sizeof(this->curVal)        +
+            sizeof(this->midiChannel)   +
+            sizeof(this->latching);
+    }
+
+    static uint8_t * buffer = new uint8_t[bufferSize];
+    uint16_t offset = 0;
+    memcpy(buffer + offset, &bufferSize, sizeof(size_t));   // Buffer size
+    offset += sizeof(size_t);
+    for (uint8_t i = 0; i < NUM_LAYERS; i++)
+    {
+        uint8_t s = this->userLabel[i].size();
+        memcpy(buffer + offset, &s, sizeof(uint8_t));
+        offset += sizeof(uint8_t);
+        memcpy(buffer + offset, this->userLabel[i].data(), s);
+        offset += s;
+        memcpy(buffer + offset, &this->controllerID[i], sizeof(this->controllerID[i]));
+        offset += sizeof(this->controllerID[i]);
+        memcpy(buffer + offset, &this->minVal[i], sizeof(this->minVal[i]));
+        offset += sizeof(this->minVal[i]);
+        memcpy(buffer + offset, &this->maxVal[i], sizeof(this->maxVal[i]));
+        offset += sizeof(this->maxVal[i]);
+        memcpy(buffer + offset, &this->curVal[i], sizeof(this->curVal[i]));
+        offset += sizeof(this->curVal[i]);
+        memcpy(buffer + offset, &this->midiChannel[i], sizeof(this->midiChannel[i]));
+        offset += sizeof(this->midiChannel[i]);
+        memcpy(buffer + offset, &this->latching[i], sizeof(this->latching[i]));
+        offset += sizeof(this->latching[i]);
+
+    }
+    return buffer;
 }
 
 std::istream& ControllerModel::deserialise(std::istream& is) const

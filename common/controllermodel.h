@@ -16,6 +16,7 @@ private:
     uint8_t     curVal      [NUM_LAYERS];
     uint8_t     midiChannel [NUM_LAYERS];
     bool        latching    [NUM_LAYERS];
+
 public:
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Setters
     void setUserLabel   (uint8_t layer, std::string name);
@@ -24,6 +25,7 @@ public:
     void setMaxVal      (uint8_t layer, uint8_t max     );
     void setMidiChannel (uint8_t layer, uint8_t chan    );
     void setLatching    (uint8_t layer, bool latch      );
+
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Getters
     std::vector<std::string>    getUserLabels   ();
     std::vector<uint8_t>        getControllerIDs();
@@ -37,8 +39,9 @@ public:
     uint8_t                     getMaxVal       (uint8_t layer);
     uint8_t                     getMidiChannel  (uint8_t layer);
     bool                        getLatching     (uint8_t layer);
+
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Utility
-    std::ostream& serialise     (std::ostream& os) const;
+    uint8_t * serialise         ();
     std::istream& deserialise   (std::istream& is) const;
     ControllerModel             ();
 };
