@@ -54,26 +54,26 @@ uint8_t * generateConfigRequest(uint8_t controllerID)
     return _packetise(MSG_REQ_CONFIG, data, 1);
 }
 
-uint8_t generateConfigAck(uint8_t controllerID)
+uint8_t * generateConfigAck(uint8_t controllerID)
 {
     uint8_t * data[1] = {&controllerID};
     return _packetise(MSG_REQ_ACK, data, 1);
 }
 
-uint8_t generatePrep(uint8_t controllerID)
+uint8_t * generatePrep(uint8_t controllerID)
 {
     uint8_t * data[1] = {&controllerID};
     return _packetise(MSG_PREP_CONFIG, data, 1);
 }
 
-uint8_t generatePrepAck(uint8_t controllerID)
+uint8_t * generatePrepAck(uint8_t controllerID)
 {
     uint8_t * data[1] = {&controllerID};
     return _packetise(MSG_PREP_ACK, data, 1);
 }
 
-uint8_t generateConfigError()   {   return _packetise(MSG_REQ_ERROR, nullptr, 0);   }
-uint8_t generatePrepError()     {   return _packetise(MSG_PREP_ERROR, nullptr, 0);  }
-uint8_t generateXferError()     {   return _packetise(MSG_XFER_ERROR, nullptr, 0);  }
-uint8_t generateXferDone()      {   return _packetise(MSG_XFER_DONE, nullptr, 0);   }
-uint8_t generateXferData(uint8_t * data[], uint8_t length)  {   return _packetise(MSG_XFER_DATA, data, length);     }
+uint8_t * generateConfigError()   {   return _packetise(MSG_REQ_ERROR, nullptr, 0);   }
+uint8_t * generatePrepError()     {   return _packetise(MSG_PREP_ERROR, nullptr, 0);  }
+uint8_t * generateXferError()     {   return _packetise(MSG_XFER_ERROR, nullptr, 0);  }
+uint8_t * generateXferDone()      {   return _packetise(MSG_XFER_DONE, nullptr, 0);   }
+uint8_t * generateXferData(uint8_t * data[], uint8_t length)  {   return _packetise(MSG_XFER_DATA, data, length);     }

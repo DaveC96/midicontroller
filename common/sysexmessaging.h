@@ -20,13 +20,13 @@
 uint8_t _checksum(uint8_t msgtype, uint8_t * data[], uint8_t length);
 uint8_t * _packetise(uint8_t msgtype, uint8_t * data[], uint8_t length);
 uint8_t * generateConfigRequest(uint8_t controllerID);
-uint8_t generateConfigAck(uint8_t controllerID);
-uint8_t generatePrep(uint8_t controllerID);
-uint8_t generatePrepAck(uint8_t controllerID);
-uint8_t generateConfigError();
-uint8_t generatePrepError();
-uint8_t generateXferError();
-uint8_t generateXferDone();
-uint8_t generateXferData(uint8_t * data[], uint8_t length);
+uint8_t * generateConfigAck(uint8_t controllerID);
+uint8_t * generatePrep(uint8_t controllerID);
+uint8_t * generatePrepAck(uint8_t controllerID);
+uint8_t * generateConfigError();
+uint8_t * generatePrepError();
+uint8_t * generateXferError();
+uint8_t * generateXferDone();
+uint8_t * generateXferData(uint8_t * data[], uint8_t length);
 
 #endif
