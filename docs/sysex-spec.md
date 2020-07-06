@@ -7,7 +7,7 @@ The final byte before the terminator is a checksum detailed below.
 # Checksum
 The final byte is to be calculated by copying the function byte to a counter.
 Each of the following data bytes is then added one by one to the counter.
-If an addition exceeds 127, the counter wraps to 0 and the remainder is added.
+If an addition exceeds 127, the overflowing operation is halted, counter reset to 0, and then resumed.
 
 # Message Types
 The top 4 bits signify logical separations of functionality.

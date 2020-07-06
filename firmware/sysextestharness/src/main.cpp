@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <MIDI.h>
+#include "sysexmessaging.h"
 
 void onRecvSysex(byte * data, unsigned int length)
 {
@@ -29,5 +30,9 @@ void setup() {
 }
 
 void loop() {
-  usbMIDI.read();
+  // usbMIDI.read();
+  delay(2500);
+  uint8_t * pkt;
+  pkt = generateConfigRequest(0);
+  usbMIDI.sendSysEx(sizeof(pkt)/sizeof(uint8_t *), pkt[0], true);
 }
