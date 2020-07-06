@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "model.h"
-#include "sysexmessaging.h"
+#include "../../common/sysexmessaging.h"
 #include <iostream>
 
 MainWindow::MainWindow(AppModel *model, QWidget *parent) :
@@ -40,26 +40,26 @@ void MainWindow::changeLayers()
     }
 
     // Update the UI elements
-    ui->c1_lineeditName ->setText   (this->model->controllers[0].userLabel[this->model->currentLayer]);
-    ui->c2_lineeditName ->setText   (this->model->controllers[1].userLabel[this->model->currentLayer]);
-    ui->c3_lineeditName ->setText   (this->model->controllers[2].userLabel[this->model->currentLayer]);
-    ui->c4_lineeditName ->setText   (this->model->controllers[3].userLabel[this->model->currentLayer]);
-    ui->c1_checkboxLatch->setChecked(this->model->controllers[0].latching[this->model->currentLayer]);
-    ui->c2_checkboxLatch->setChecked(this->model->controllers[1].latching[this->model->currentLayer]);
-    ui->c3_checkboxLatch->setChecked(this->model->controllers[2].latching[this->model->currentLayer]);
-    ui->c4_checkboxLatch->setChecked(this->model->controllers[3].latching[this->model->currentLayer]);
-    ui->c1_spinboxCC    ->setValue  (this->model->controllers[0].controllerID[this->model->currentLayer]);
-    ui->c2_spinboxCC    ->setValue  (this->model->controllers[1].controllerID[this->model->currentLayer]);
-    ui->c3_spinboxCC    ->setValue  (this->model->controllers[2].controllerID[this->model->currentLayer]);
-    ui->c4_spinboxCC    ->setValue  (this->model->controllers[3].controllerID[this->model->currentLayer]);
-    ui->c1_spinboxMin   ->setValue  (this->model->controllers[0].minVal[this->model->currentLayer]);
-    ui->c2_spinboxMin   ->setValue  (this->model->controllers[1].minVal[this->model->currentLayer]);
-    ui->c3_spinboxMin   ->setValue  (this->model->controllers[2].minVal[this->model->currentLayer]);
-    ui->c4_spinboxMin   ->setValue  (this->model->controllers[3].minVal[this->model->currentLayer]);
-    ui->c1_spinboxMax   ->setValue  (this->model->controllers[0].maxVal[this->model->currentLayer]);
-    ui->c2_spinboxMax   ->setValue  (this->model->controllers[1].maxVal[this->model->currentLayer]);
-    ui->c3_spinboxMax   ->setValue  (this->model->controllers[2].maxVal[this->model->currentLayer]);
-    ui->c4_spinboxMax   ->setValue  (this->model->controllers[3].maxVal[this->model->currentLayer]);
+    ui->c1_lineeditName ->setText   (QString::fromStdString(this->model->controllers[0].getUserLabels()[this->model->currentLayer]));
+    ui->c2_lineeditName ->setText   (QString::fromStdString(this->model->controllers[1].getUserLabels()[this->model->currentLayer]));
+    ui->c3_lineeditName ->setText   (QString::fromStdString(this->model->controllers[2].getUserLabels()[this->model->currentLayer]));
+    ui->c4_lineeditName ->setText   (QString::fromStdString(this->model->controllers[3].getUserLabels()[this->model->currentLayer]));
+    ui->c1_checkboxLatch->setChecked(this->model->controllers[0].getLatchings()[this->model->currentLayer]);
+    ui->c2_checkboxLatch->setChecked(this->model->controllers[1].getLatchings()[this->model->currentLayer]);
+    ui->c3_checkboxLatch->setChecked(this->model->controllers[2].getLatchings()[this->model->currentLayer]);
+    ui->c4_checkboxLatch->setChecked(this->model->controllers[3].getLatchings()[this->model->currentLayer]);
+    ui->c1_spinboxCC    ->setValue  (this->model->controllers[0].getControllerIDs()[this->model->currentLayer]);
+    ui->c2_spinboxCC    ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
+    ui->c3_spinboxCC    ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
+    ui->c4_spinboxCC    ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
+    ui->c1_spinboxMin   ->setValue  (this->model->controllers[0].getControllerIDs()[this->model->currentLayer]);
+    ui->c2_spinboxMin   ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
+    ui->c3_spinboxMin   ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
+    ui->c4_spinboxMin   ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
+    ui->c1_spinboxMax   ->setValue  (this->model->controllers[0].getControllerIDs()[this->model->currentLayer]);
+    ui->c2_spinboxMax   ->setValue  (this->model->controllers[1].getControllerIDs()[this->model->currentLayer]);
+    ui->c3_spinboxMax   ->setValue  (this->model->controllers[2].getControllerIDs()[this->model->currentLayer]);
+    ui->c4_spinboxMax   ->setValue  (this->model->controllers[3].getControllerIDs()[this->model->currentLayer]);
 
 
 
@@ -67,33 +67,33 @@ void MainWindow::changeLayers()
 
 void MainWindow::setControllerLatch(int id, QCheckBox * element)
 {
-    this->model->controllers[id].latching[this->model->currentLayer] = element->isChecked();
+    this->model->controllers[id].setLatching(this->model->currentLayer, element->isChecked());
 }
 
 void MainWindow::setUserLabel(int id, QLineEdit * element)
 {
-    this->model->controllers[id].userLabel[this->model->currentLayer] = element->text();
+    this->model->controllers[id].setUserLabel(this->model->currentLayer, element->text().toStdString());
 }
 
 void MainWindow::setControllerCC(int id, QSpinBox * element)
 {
     if      (element->value() > 127) {  element->setValue(127); }
     else if (element->value() <   0) {  element->setValue(  0); }
-    this->model->controllers[id].controllerID[this->model->currentLayer] = element->value();
+    this->model->controllers[id].setControllerID(this->model->currentLayer, element->value());
 }
 
 void MainWindow::setControllerMin(int id, QSpinBox * element)
 {
     if      (element->value() > 127) {  element->setValue(127); }
     else if (element->value() <   0) {  element->setValue(  0); }
-    this->model->controllers[id].minVal[this->model->currentLayer] = element->value();
+    this->model->controllers[id].setMinVal(this->model->currentLayer, element->value());
 }
 
 void MainWindow::setControllerMax(int id, QSpinBox * element)
 {
     if      (element->value() > 127) {  element->setValue(127); }
     else if (element->value() <   0) {  element->setValue(  0); }
-    this->model->controllers[id].maxVal[this->model->currentLayer] = element->value();
+    this->model->controllers[id].setMaxVal(this->model->currentLayer, element->value());
 }
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
@@ -126,20 +126,17 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 void MainWindow::on_glob_buttonWrite_clicked()
 {
     printf("Breakpoint hit, go read your debugger, nerd.\n");
-    int a = sizeof(ControllerConfig);
 }
 
-static int c = 0;
 void MainWindow::on_glob_buttonLoad_clicked()
 {
-    std::vector<uint8_t> pkt = generateConfigRequest(c);
+    std::vector<uint8_t> pkt = generateConfigRequest(3);
     QString pstr;
     for (uint8_t data : pkt)
     {
         pstr.append(QString::number(data, 16).rightJustified(2, '0').toUpper() + " ");
     }
     ui->glob_textBrowser->append("Packet: [ " + pstr + "]");
-    c++;
 }
 
 void MainWindow::on_rb_layer1_clicked() {   this->changeLayers();   }

@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        $${PWD}/../../common/sysexmessaging.cpp \
+    $$PWD/../../common/sysexmessaging.cpp \
+    ../../common/controllermodel.cpp \
         main.cpp \
         mainwindow.cpp \
 
 
 HEADERS += \
-        $${PWD}/../../common/sysexmessaging.h \
+    $$PWD/../../common/sysexmessaging.h \
+    ../../common/controllermodel.h \
+    controllermodel.h \
         mainwindow.h \
         model.h \
 
