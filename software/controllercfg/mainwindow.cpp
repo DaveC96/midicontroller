@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "model.h"
+#include "sysexmessaging.h"
+#include <iostream>
 
 MainWindow::MainWindow(AppModel *model, QWidget *parent) :
     QMainWindow(parent),
@@ -121,10 +123,23 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 //  Globals UI callbacks
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_glob_buttonWrite_clicked()
 {
-    printf("Breakpoint hit, go read your debugger, nerd.");
+    printf("Breakpoint hit, go read your debugger, nerd.\n");
     int a = sizeof(ControllerConfig);
+}
+
+static int c = 0;
+void MainWindow::on_glob_buttonLoad_clicked()
+{
+    std::vector<uint8_t> pkt = generateConfigRequest(c);
+    QString pstr;
+    for (uint8_t data : pkt)
+    {
+        pstr.append(QString::number(data, 16).rightJustified(2, '0').toUpper() + " ");
+    }
+    ui->glob_textBrowser->append("Packet: [ " + pstr + "]");
+    c++;
 }
 
 void MainWindow::on_rb_layer1_clicked() {   this->changeLayers();   }

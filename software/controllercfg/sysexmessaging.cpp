@@ -8,7 +8,7 @@
 
 void _packetise(std::vector<uint8_t> * data)
 {
-    // Checksum -- Yeah this isn't really a useful scheme in any way... Should probably rethink this.
+    // Checksum
     uint8_t counter = 0;
     for (uint8_t byte : (*data))
     {

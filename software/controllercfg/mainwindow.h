@@ -39,7 +39,8 @@ private slots:
     void on_c2_spinboxMax_valueChanged();
     void on_c3_spinboxMax_valueChanged();
     void on_c4_spinboxMax_valueChanged();
-    void on_pushButton_2_clicked();
+    void on_glob_buttonWrite_clicked();
+    void on_glob_buttonLoad_clicked();
     void on_rb_layer1_clicked();
     void on_rb_layer2_clicked();
     void on_rb_layer3_clicked();

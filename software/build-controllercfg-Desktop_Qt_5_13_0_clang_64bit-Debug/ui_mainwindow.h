@@ -26,6 +26,7 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -52,13 +53,13 @@ public:
     QGroupBox *groupBox_9;
     QWidget *gridLayoutWidget_3;
     QGridLayout *gridLayout_3;
-    QSpacerItem *horizontalSpacer;
     QSpinBox *spinBox_17;
     QLabel *label_17;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *glob_buttonLoad;
+    QPushButton *glob_buttonWrite;
     QSpacerItem *horizontalSpacer_2;
     QProgressBar *progressBar;
+    QTextBrowser *glob_textBrowser;
     QGroupBox *groupBox_4;
     QWidget *gridLayoutWidget_6;
     QGridLayout *gridLayout_6;
@@ -202,16 +203,12 @@ public:
         groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
         gridLayoutWidget_3 = new QWidget(groupBox_9);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(0, 20, 871, 151));
+        gridLayoutWidget_3->setGeometry(QRect(0, 20, 871, 141));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer, 1, 2, 1, 1);
-
         spinBox_17 = new QSpinBox(gridLayoutWidget_3);
         spinBox_17->setObjectName(QString::fromUtf8("spinBox_17"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -232,20 +229,20 @@ public:
 
         gridLayout_3->addWidget(label_17, 0, 1, 1, 1);
 
-        pushButton = new QPushButton(gridLayoutWidget_3);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        glob_buttonLoad = new QPushButton(gridLayoutWidget_3);
+        glob_buttonLoad->setObjectName(QString::fromUtf8("glob_buttonLoad"));
         QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy4);
+        sizePolicy4.setHeightForWidth(glob_buttonLoad->sizePolicy().hasHeightForWidth());
+        glob_buttonLoad->setSizePolicy(sizePolicy4);
 
-        gridLayout_3->addWidget(pushButton, 2, 1, 1, 1);
+        gridLayout_3->addWidget(glob_buttonLoad, 2, 1, 1, 1);
 
-        pushButton_2 = new QPushButton(gridLayoutWidget_3);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        glob_buttonWrite = new QPushButton(gridLayoutWidget_3);
+        glob_buttonWrite->setObjectName(QString::fromUtf8("glob_buttonWrite"));
 
-        gridLayout_3->addWidget(pushButton_2, 3, 1, 1, 1);
+        gridLayout_3->addWidget(glob_buttonWrite, 3, 1, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -258,6 +255,14 @@ public:
         progressBar->setValue(24);
 
         gridLayout_3->addWidget(progressBar, 4, 0, 1, 3);
+
+        glob_textBrowser = new QTextBrowser(gridLayoutWidget_3);
+        glob_textBrowser->setObjectName(QString::fromUtf8("glob_textBrowser"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Courier New"));
+        glob_textBrowser->setFont(font);
+
+        gridLayout_3->addWidget(glob_textBrowser, 0, 2, 4, 1);
 
 
         gridLayout->addWidget(groupBox_9, 1, 0, 1, 4);
@@ -546,8 +551,8 @@ public:
         label_6->setText(QCoreApplication::translate("MainWindow", "Max", nullptr));
         groupBox_9->setTitle(QCoreApplication::translate("MainWindow", "Globals", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "MIDI Channel", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Load from Device", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Write to Device", nullptr));
+        glob_buttonLoad->setText(QCoreApplication::translate("MainWindow", "Load from Device", nullptr));
+        glob_buttonWrite->setText(QCoreApplication::translate("MainWindow", "Write to Device", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "Controller 4", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Min", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Max", nullptr));

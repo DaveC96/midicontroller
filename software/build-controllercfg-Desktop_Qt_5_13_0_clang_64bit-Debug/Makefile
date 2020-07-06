@@ -52,9 +52,11 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../controllercfg/main.cpp \
+SOURCES       = ../../common/sysexmessaging.cpp \
+		../controllercfg/main.cpp \
 		../controllercfg/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+OBJECTS       = sysexmessaging.o \
+		main.o \
 		mainwindow.o \
 		moc_mainwindow.o
 DIST          = /Users/dave/Qt/5.13.0/clang_64/mkspecs/features/spec_pre.prf \
@@ -229,8 +231,10 @@ DIST          = /Users/dave/Qt/5.13.0/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/dave/Qt/5.13.0/clang_64/mkspecs/features/exceptions.prf \
 		/Users/dave/Qt/5.13.0/clang_64/mkspecs/features/yacc.prf \
 		/Users/dave/Qt/5.13.0/clang_64/mkspecs/features/lex.prf \
-		../controllercfg/controllercfg.pro ../controllercfg/mainwindow.h \
-		../controllercfg/model.h ../controllercfg/main.cpp \
+		../controllercfg/controllercfg.pro ../../common/sysexmessaging.h \
+		../controllercfg/mainwindow.h \
+		../controllercfg/model.h ../../common/sysexmessaging.cpp \
+		../controllercfg/main.cpp \
 		../controllercfg/mainwindow.cpp
 QMAKE_TARGET  = controllercfg
 DESTDIR       = 
@@ -637,8 +641,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/dave/Qt/5.13.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../controllercfg/mainwindow.h ../controllercfg/model.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../controllercfg/main.cpp ../controllercfg/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../common/sysexmessaging.h ../controllercfg/mainwindow.h ../controllercfg/model.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../common/sysexmessaging.cpp ../controllercfg/main.cpp ../controllercfg/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../controllercfg/mainwindow.ui $(DISTDIR)/
 
 
@@ -680,6 +684,9 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../controllercfg/mainwindow.h \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		ui_mainwindow.h \
 		../controllercfg/model.h \
 		moc_predefs.h \
 		/Users/dave/Qt/5.13.0/clang_64/bin/moc
@@ -708,19 +715,25 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+sysexmessaging.o: ../../common/sysexmessaging.cpp ../../common/sysexmessaging.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sysexmessaging.o ../../common/sysexmessaging.cpp
+
 main.o: ../controllercfg/main.cpp ../controllercfg/mainwindow.h \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../controllercfg/model.h \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		ui_mainwindow.h \
+		../controllercfg/model.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../controllercfg/main.cpp
 
 mainwindow.o: ../controllercfg/mainwindow.cpp ../controllercfg/mainwindow.h \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../controllercfg/model.h \
-		ui_mainwindow.h
+		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		/Users/dave/Qt/5.13.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		ui_mainwindow.h \
+		../controllercfg/model.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../controllercfg/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
