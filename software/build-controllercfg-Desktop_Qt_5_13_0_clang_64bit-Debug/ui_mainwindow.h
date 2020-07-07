@@ -53,13 +53,15 @@ public:
     QGroupBox *groupBox_9;
     QWidget *gridLayoutWidget_3;
     QGridLayout *gridLayout_3;
-    QSpinBox *spinBox_17;
     QLabel *label_17;
-    QPushButton *glob_buttonLoad;
     QPushButton *glob_buttonWrite;
-    QSpacerItem *horizontalSpacer_2;
+    QPushButton *glob_buttonLoad;
+    QSpinBox *spinBox_17;
     QProgressBar *progressBar;
     QTextBrowser *glob_textBrowser;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *glob_buttonOpenPort;
+    QLabel *glob_labelPortActive;
     QGroupBox *groupBox_4;
     QWidget *gridLayoutWidget_6;
     QGridLayout *gridLayout_6;
@@ -203,58 +205,54 @@ public:
         groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
         gridLayoutWidget_3 = new QWidget(groupBox_9);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(0, 20, 871, 141));
+        gridLayoutWidget_3->setGeometry(QRect(0, 20, 871, 154));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        spinBox_17 = new QSpinBox(gridLayoutWidget_3);
-        spinBox_17->setObjectName(QString::fromUtf8("spinBox_17"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(spinBox_17->sizePolicy().hasHeightForWidth());
-        spinBox_17->setSizePolicy(sizePolicy2);
-
-        gridLayout_3->addWidget(spinBox_17, 1, 1, 1, 1);
-
         label_17 = new QLabel(gridLayoutWidget_3);
         label_17->setObjectName(QString::fromUtf8("label_17"));
-        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Preferred);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(label_17->sizePolicy().hasHeightForWidth());
-        label_17->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_17->sizePolicy().hasHeightForWidth());
+        label_17->setSizePolicy(sizePolicy2);
 
-        gridLayout_3->addWidget(label_17, 0, 1, 1, 1);
-
-        glob_buttonLoad = new QPushButton(gridLayoutWidget_3);
-        glob_buttonLoad->setObjectName(QString::fromUtf8("glob_buttonLoad"));
-        QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(glob_buttonLoad->sizePolicy().hasHeightForWidth());
-        glob_buttonLoad->setSizePolicy(sizePolicy4);
-
-        gridLayout_3->addWidget(glob_buttonLoad, 2, 1, 1, 1);
+        gridLayout_3->addWidget(label_17, 0, 2, 1, 1);
 
         glob_buttonWrite = new QPushButton(gridLayoutWidget_3);
         glob_buttonWrite->setObjectName(QString::fromUtf8("glob_buttonWrite"));
 
-        gridLayout_3->addWidget(glob_buttonWrite, 3, 1, 1, 1);
+        gridLayout_3->addWidget(glob_buttonWrite, 3, 2, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        glob_buttonLoad = new QPushButton(gridLayoutWidget_3);
+        glob_buttonLoad->setObjectName(QString::fromUtf8("glob_buttonLoad"));
+        QSizePolicy sizePolicy3(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(glob_buttonLoad->sizePolicy().hasHeightForWidth());
+        glob_buttonLoad->setSizePolicy(sizePolicy3);
 
-        gridLayout_3->addItem(horizontalSpacer_2, 1, 0, 1, 1);
+        gridLayout_3->addWidget(glob_buttonLoad, 2, 2, 1, 1);
+
+        spinBox_17 = new QSpinBox(gridLayoutWidget_3);
+        spinBox_17->setObjectName(QString::fromUtf8("spinBox_17"));
+        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(spinBox_17->sizePolicy().hasHeightForWidth());
+        spinBox_17->setSizePolicy(sizePolicy4);
+
+        gridLayout_3->addWidget(spinBox_17, 1, 2, 1, 1);
 
         progressBar = new QProgressBar(gridLayoutWidget_3);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        sizePolicy4.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
-        progressBar->setSizePolicy(sizePolicy4);
+        sizePolicy3.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
+        progressBar->setSizePolicy(sizePolicy3);
         progressBar->setValue(24);
 
-        gridLayout_3->addWidget(progressBar, 4, 0, 1, 3);
+        gridLayout_3->addWidget(progressBar, 4, 0, 1, 4);
 
         glob_textBrowser = new QTextBrowser(gridLayoutWidget_3);
         glob_textBrowser->setObjectName(QString::fromUtf8("glob_textBrowser"));
@@ -262,7 +260,22 @@ public:
         font.setFamily(QString::fromUtf8("Courier New"));
         glob_textBrowser->setFont(font);
 
-        gridLayout_3->addWidget(glob_textBrowser, 0, 2, 4, 1);
+        gridLayout_3->addWidget(glob_textBrowser, 0, 1, 4, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer_2, 0, 0, 1, 1);
+
+        glob_buttonOpenPort = new QPushButton(gridLayoutWidget_3);
+        glob_buttonOpenPort->setObjectName(QString::fromUtf8("glob_buttonOpenPort"));
+
+        gridLayout_3->addWidget(glob_buttonOpenPort, 3, 0, 1, 1);
+
+        glob_labelPortActive = new QLabel(gridLayoutWidget_3);
+        glob_labelPortActive->setObjectName(QString::fromUtf8("glob_labelPortActive"));
+        glob_labelPortActive->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(glob_labelPortActive, 2, 0, 1, 1);
 
 
         gridLayout->addWidget(groupBox_9, 1, 0, 1, 4);
@@ -551,8 +564,10 @@ public:
         label_6->setText(QCoreApplication::translate("MainWindow", "Max", nullptr));
         groupBox_9->setTitle(QCoreApplication::translate("MainWindow", "Globals", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "MIDI Channel", nullptr));
-        glob_buttonLoad->setText(QCoreApplication::translate("MainWindow", "Load from Device", nullptr));
         glob_buttonWrite->setText(QCoreApplication::translate("MainWindow", "Write to Device", nullptr));
+        glob_buttonLoad->setText(QCoreApplication::translate("MainWindow", "Load from Device", nullptr));
+        glob_buttonOpenPort->setText(QCoreApplication::translate("MainWindow", "Open MIDI Port", nullptr));
+        glob_labelPortActive->setText(QCoreApplication::translate("MainWindow", "Not Active", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "Controller 4", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Min", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Max", nullptr));

@@ -25,17 +25,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    midi.cpp \
     $$PWD/../../common/sysexmessaging.cpp \
-    ../../common/controllermodel.cpp \
+    $$PWD/../../common/controllermodel.cpp \
         main.cpp \
         mainwindow.cpp \
 
 
+
 HEADERS += \
+    midi.h \
     $$PWD/../../common/sysexmessaging.h \
-    ../../common/controllermodel.h \
+    $$PWD/../../common/controllermodel.h \
     controllermodel.h \
         mainwindow.h \
+
         model.h \
 
 FORMS += \
@@ -45,3 +49,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+unix|win32: LIBS += /usr/local/lib/librtmidi.5.dylib
+
+#unix|win32: LIBS += -lrtmidi.5

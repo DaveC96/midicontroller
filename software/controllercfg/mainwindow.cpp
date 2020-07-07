@@ -3,6 +3,7 @@
 #include "model.h"
 #include "../../common/sysexmessaging.h"
 #include <iostream>
+#include "midi.h"
 
 MainWindow::MainWindow(AppModel *model, QWidget *parent) :
     QMainWindow(parent),
@@ -127,9 +128,8 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 
 void MainWindow::on_glob_buttonWrite_clicked()
 {
-    uint8_t * layer0 = this->model->controllers[0].serialise();
-
-
+    std::vector<uint8_t> layer0 = generateXferData(this->model->controllers[0].serialise());
+    model->midiOut->sendMessage(&layer0);
     printf("Breakpoint hit, go read your debugger, nerd.\n");
 
 }
@@ -153,3 +153,17 @@ void MainWindow::on_rb_layer5_clicked() {   this->changeLayers();   }
 void MainWindow::on_rb_layer6_clicked() {   this->changeLayers();   }
 void MainWindow::on_rb_layer7_clicked() {   this->changeLayers();   }
 void MainWindow::on_rb_layer8_clicked() {   this->changeLayers();   }
+
+void MainWindow::on_glob_buttonOpenPort_clicked()
+{
+    const std::string target = "Teensy MIDI";   // Probably select this at some point
+    if (openPort(model->midiOut, target) == 0)
+    {
+        ui->glob_labelPortActive->setText(QString::fromStdString("Active"));
+        ui->glob_textBrowser->append(QString::fromStdString("Opened port: " + target));
+    } else {
+        ui->glob_labelPortActive->setText(QString::fromStdString("Not found"));
+        ui->glob_textBrowser->append(QString::fromStdString("Not found: " + target));
+    }
+
+}

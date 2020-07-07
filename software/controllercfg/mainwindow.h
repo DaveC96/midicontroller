@@ -54,6 +54,8 @@ private slots:
 
 
 
+    void on_glob_buttonOpenPort_clicked();
+
 private:
     Ui::MainWindow *ui;
     AppModel * model;

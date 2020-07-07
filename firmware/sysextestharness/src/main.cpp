@@ -5,14 +5,12 @@
 void onRecvSysex(byte * data, unsigned int length)
 {
   digitalWrite(LED_BUILTIN, 1);
-  delay(1000);
   byte buf[length];
   for (byte i = 0; i < length; i++)
   {
     buf[i] = *(data + i);
   }
-  delay(1000);
-  digitalWrite(LED_BUILTIN,0);
+  digitalWrite(LED_BUILTIN, 0);
   usbMIDI.sendSysEx(length, buf, true);
 }
 
@@ -30,9 +28,8 @@ void setup() {
 }
 
 void loop() {
-  // usbMIDI.read();
-  delay(2500);
-  uint8_t * pkt;
-  pkt = generateConfigRequest(0);
-  usbMIDI.sendSysEx(sizeof(pkt)/sizeof(uint8_t *), pkt[0], true);
+  usbMIDI.read();
+  // uint8_t * pkt;
+  // pkt = generateConfigRequest(0);
+  // usbMIDI.sendSysEx(sizeof(pkt)/sizeof(uint8_t *), pkt[0], true);
 }

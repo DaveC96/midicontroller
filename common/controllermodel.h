@@ -41,7 +41,8 @@ public:
     bool                        getLatching     (uint8_t layer);
 
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Utility
-    uint8_t * serialise         ();
+//    uint8_t * serialise         ();
+    std::vector<uint8_t> serialise();
     std::istream& deserialise   (std::istream& is) const;
     ControllerModel             ();
 };
