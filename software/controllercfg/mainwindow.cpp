@@ -4,6 +4,7 @@
 #include "../../common/sysexmessaging.h"
 #include <iostream>
 #include "midi.h"
+#include <QThread>
 
 MainWindow::MainWindow(AppModel *model, QWidget *parent) :
     QMainWindow(parent),
@@ -128,10 +129,16 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 
 void MainWindow::on_glob_buttonWrite_clicked()
 {
-    std::vector<uint8_t> layer0 = generateXferData(this->model->controllers[0].serialise());
-    model->midiOut->sendMessage(&layer0);
-    printf("Breakpoint hit, go read your debugger, nerd.\n");
-
+    std::vector<std::vector<uint8_t>> packets;
+    for (uint8_t controller = 0; controller < 1; controller++)
+    {
+        packets.push_back(generateXferData(this->model->controllers[controller].serialise()));
+    }
+    for (uint8_t controller = 0; controller < 1; controller++)
+    {
+        model->midiOut->sendMessage(&packets[controller]);
+        ui->glob_textBrowser->append(QString("Sent config for controller ").append(QString::number(controller+1)));
+    }
 }
 
 void MainWindow::on_glob_buttonLoad_clicked()

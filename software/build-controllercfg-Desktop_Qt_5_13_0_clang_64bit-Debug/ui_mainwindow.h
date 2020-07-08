@@ -250,7 +250,7 @@ public:
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         sizePolicy3.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
         progressBar->setSizePolicy(sizePolicy3);
-        progressBar->setValue(24);
+        progressBar->setValue(0);
 
         gridLayout_3->addWidget(progressBar, 4, 0, 1, 4);
 
