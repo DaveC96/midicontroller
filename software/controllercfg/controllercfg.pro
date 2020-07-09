@@ -37,7 +37,6 @@ HEADERS += \
     midi.h \
     $$PWD/../../common/sysexmessaging.h \
     $$PWD/../../common/controllermodel.h \
-    controllermodel.h \
         mainwindow.h \
 
         model.h \

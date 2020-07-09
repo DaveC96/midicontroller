@@ -49,8 +49,10 @@ std::vector<uint8_t> getName(uint8_t * data)  // Pass a pointer to the pre-strin
 void drawMockupUI()
 {
   oled.clearDisplay();
+  #ifdef UI_FRAMES
   oled.drawFrame(0, 0, 128, 64);
   oled.drawRFrame(0, -5, 128, 22, 7);
+  #endif
   oled.setFont(u8g2_font_9x15_me);
   oled.drawStr(10, 13, "Test Layer 2");
 
@@ -81,6 +83,12 @@ void onRecvSysex(byte * data, unsigned int length)
 
   switch (buf[1])
   {
+  case MSG_PREP_CONFIG:
+    oled.clearBuffer();
+    oled.setFont(u8g2_font_8x13_me);
+    oled.drawStr(2, 12, "Receiving config");
+    oled.sendBuffer();
+    break;
   case MSG_XFER_DATA:
 
       // std::vector<std::vector<uint8_t>> names = parseForNames(buf);

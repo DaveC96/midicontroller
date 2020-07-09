@@ -26,54 +26,44 @@ void ControllerModel::setLatching(uint8_t layer, bool latch)
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Getters
 std::vector<std::string> ControllerModel::getUserLabels()
 {
-    std::vector<std::string> buf;
-    buf.assign(this->userLabel, this->userLabel+NUM_LAYERS);
-    return buf;
+    return this->userLabel;
 }
 std::string ControllerModel::getUserLabel(uint8_t layer)
-{   return this->userLabel[layer];      }
+{
+    return this->userLabel[layer];
+}
 
 std::vector<uint8_t> ControllerModel::getControllerIDs()
 {
-    std::vector<uint8_t> buf;
-    buf.assign(this->controllerID, this->controllerID+NUM_LAYERS);
-    return buf;
+    return this->controllerID;
 }
 uint8_t ControllerModel::getControllerID(uint8_t layer)
 {   return this->controllerID[layer];   }
 
 std::vector<uint8_t> ControllerModel::getMinVals()
 {
-    std::vector<uint8_t> buf;
-    buf.assign(this->minVal, this->minVal+NUM_LAYERS);
-    return buf;
+    return this->minVal;
 }
 uint8_t ControllerModel::getMinVal(uint8_t layer)
 {   return this->minVal[layer];         }
 
 std::vector<uint8_t> ControllerModel::getMaxVals()
 {
-    std::vector<uint8_t> buf;
-    buf.assign(this->maxVal, this->maxVal+NUM_LAYERS);
-    return buf;
+    return this->maxVal;
 }
 uint8_t ControllerModel::getMaxVal(uint8_t layer)
 {   return this->maxVal[layer];         }
 
 std::vector<uint8_t> ControllerModel::getMidiChannels()
 {
-    std::vector<uint8_t> buf;
-    buf.assign(this->midiChannel, this->midiChannel+NUM_LAYERS);
-    return buf;
+    return this->midiChannel;
 }
 uint8_t ControllerModel::getMidiChannel(uint8_t layer)
 {   return this->midiChannel[layer];    }
 
 std::vector<bool> ControllerModel::getLatchings()
 {
-    std::vector<bool> buf;
-    buf.assign(this->latching, this->latching+NUM_LAYERS);
-    return buf;
+    return this->latching;
 }
 bool ControllerModel::getLatching(uint8_t layer)
 {   return this->latching[layer];       }
@@ -101,10 +91,44 @@ std::vector<uint8_t> ControllerModel::serialise()
     return buf;
 }
 
-std::istream& ControllerModel::deserialise(std::istream& is) const
+void ControllerModel::deserialise(std::vector<uint8_t> buf)
 {
-    //TODO
-    return is;
+    // Clear model
+    this->userLabel.clear();
+    this->controllerID.clear();
+    this->minVal.clear();
+    this->maxVal.clear();
+    this->curVal.clear();
+    this->midiChannel.clear();
+    this->latching.clear();
+
+    /*
+     *  0               1               2
+     *  Sysex Start     Function byte   Model length
+     *  3               4...n           n+1             n+2             n+3             n+4             n+5             n+6
+     *  String length   buf[3] chars    CC ID           Min value       Max value       Current value   MIDI channel    Latching
+     */
+    uint8_t layer = 0;
+    uint8_t offset = 3;
+    while (offset < buf[2])
+    {
+        char * reconstructedName;
+        // Start on the label string length byte
+        for (uint8_t c = 0; c < buf[offset]; c++)
+        {
+            reconstructedName[c] = buf[offset];
+            offset++;
+        }
+        this->userLabel[layer] = std::string(reconstructedName);
+        this->controllerID[layer] = buf[offset++];
+        this->minVal[layer] = buf[offset++];
+        this->maxVal[layer] = buf[offset++];
+        this->curVal[layer] = buf[offset++];
+        this->midiChannel[layer] = buf[offset++];
+        this->latching[layer] = buf[offset++];
+
+        layer++;
+    }
 }
 
 ControllerModel::ControllerModel()

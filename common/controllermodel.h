@@ -9,13 +9,13 @@
 
 class ControllerModel {
 private:
-    std::string userLabel   [NUM_LAYERS];
-    uint8_t     controllerID[NUM_LAYERS];
-    uint8_t     minVal      [NUM_LAYERS];
-    uint8_t     maxVal      [NUM_LAYERS];
-    uint8_t     curVal      [NUM_LAYERS];
-    uint8_t     midiChannel [NUM_LAYERS];
-    bool        latching    [NUM_LAYERS];
+    std::vector<std::string> userLabel   ;
+    std::vector<uint8_t>     controllerID;
+    std::vector<uint8_t>     minVal      ;
+    std::vector<uint8_t>     maxVal      ;
+    std::vector<uint8_t>     curVal      ;
+    std::vector<uint8_t>     midiChannel ;
+    std::vector<bool>        latching    ;
 
 public:
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Setters
@@ -43,7 +43,7 @@ public:
 //--\\--//--\\--//--\\--//--\\--//--\\--//--\\--//--\\--// Utility
 //    uint8_t * serialise         ();
     std::vector<uint8_t> serialise();
-    std::istream& deserialise   (std::istream& is) const;
+    void deserialise            (std::vector<uint8_t> buf);
     ControllerModel             ();
 };
 
