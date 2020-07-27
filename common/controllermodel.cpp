@@ -119,8 +119,8 @@ void ControllerModel::deserialise(std::vector<uint8_t> buf)
             reconstructedName[c] = buf[offset];
             offset++;
         }
-        this->userLabel[layer] = std::string(reconstructedName);
-        this->controllerID[layer] = buf[offset++];
+        this->userLabel.push_back(std::string(reconstructedName));
+        this->controllerID.push_back(buf[offset++]);
         this->minVal[layer] = buf[offset++];
         this->maxVal[layer] = buf[offset++];
         this->curVal[layer] = buf[offset++];
@@ -133,13 +133,19 @@ void ControllerModel::deserialise(std::vector<uint8_t> buf)
 
 ControllerModel::ControllerModel()
 {
+    this->userLabel.reserve(NUM_LAYERS);
+    this->controllerID.reserve(NUM_LAYERS);
+    this->minVal.reserve(NUM_LAYERS);
+    this->maxVal.reserve(NUM_LAYERS);
+    this->midiChannel.reserve(NUM_LAYERS);
+    this->latching.reserve(NUM_LAYERS);
     for (uint8_t layer = 0; layer < NUM_LAYERS; layer++)
     {
-        this->userLabel     [layer] = "";
-        this->controllerID  [layer] = 0;
-        this->minVal        [layer] = 0;
-        this->maxVal        [layer] = 127;
-        this->midiChannel   [layer] = 0;
-        this->latching      [layer] = false;
+        this->userLabel.push_back("");
+        this->controllerID.push_back(0);
+        this->minVal.push_back(0);
+        this->maxVal.push_back(127);
+        this->midiChannel.push_back(0);
+        this->latching.push_back(0);
     }
 }

@@ -140,7 +140,7 @@ void MainWindow::on_glob_buttonWrite_clicked()
 //        ui->glob_textBrowser->append(QString("Sent config for controller ").append(QString::number(controller+1)));
 //    }
     packets.push_back(generatePrep(2));
-    model->midiOut->sendMessage(&packets[0]);
+//    model->midiOut->sendMessage(&packets[0]);
 
     model->controllers[1].deserialise(packets[0]);
 }
