@@ -12,6 +12,7 @@
 #include <Encoder.h>
 #include "TCA9548A.h"
 
+uint8_t scaleEncoder(uint16_t);
 
 class Periphs
 {

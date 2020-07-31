@@ -6,6 +6,17 @@
 #define PIN_DATA 18
 #define PIN_BUTTON 33
 
+//          ---         ---         ---         ---         //
+
+uint8_t scaleEncoder(uint16_t val)
+{
+    return map(val, 0, 255, 0, 127);
+}
+
+
+//          ---         ---         ---         ---         //
+
+
 void Periphs::testCallback() {
     this->oledMux.openAll();
     this->oled->drawStr(2, 64, millis());
