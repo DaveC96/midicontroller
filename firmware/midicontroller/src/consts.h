@@ -4,6 +4,13 @@
 #define NUM_LAYERS      8
 #define NUM_CONTROLLERS 4
 
+#define BUTTON_HOLD_TIME 500
+
+#define EVENT_NONE      0
+#define EVENT_PRESSED   1
+#define EVENT_RELEASED  2
+#define EVENT_HELD      3
+
 //  ==      ==      ==      Pin assignments
 //      --      Encoders
 #define PIN_BUT_1   33
@@ -30,6 +37,13 @@
 #define PIN_OLED_3_SDA  4
 #define PIN_OLED_4_SCL  5
 #define PIN_OLED_4_SDA  5
+//      --      Mux outputs
+#define OLED_LL  5
+#define OLED_L   4
+#define OLED_R   3
+#define OLED_RR  2
+#define OLED_C   6
+static const uint8_t oleds[5] = { OLED_LL, OLED_L, OLED_R, OLED_RR, OLED_C };
 
 
 
