@@ -14,17 +14,17 @@
 //  ==      ==      ==      Pin assignments
 //      --      Encoders
 #define PIN_BUT_1   33
-#define PIN_ENC_1A  34
-#define PIN_ENC_1B  35
+#define PIN_ENC_1A  35
+#define PIN_ENC_1B  34
 #define PIN_BUT_2   36
-#define PIN_ENC_2A  37
-#define PIN_ENC_2B  38
+#define PIN_ENC_2A  38
+#define PIN_ENC_2B  37
 #define PIN_BUT_3   39
-#define PIN_ENC_3A  40
-#define PIN_ENC_3B  41
+#define PIN_ENC_3A  41
+#define PIN_ENC_3B  40
 #define PIN_BUT_4   20
-#define PIN_ENC_4A  21
-#define PIN_ENC_4B  22
+#define PIN_ENC_4A  22
+#define PIN_ENC_4B  21
 //      --      I2C
 #define ADDR_MUX    119
 #define PIN_MUX_SCL 19
