@@ -2,8 +2,11 @@
 #include <Wire.h>
 #include <U8g2lib.h>
 #include <string>
+#include "externs.h"
 #include "consts.h"
 #include "periphs.h"
+#include "model_device.h"
+#include "controller_session.h"
 
 // This is required to work around some known linker issues: https://forum.pjrc.com/threads/57192-Teensy-4-0-linker-issues-with-STL-libraries
 extern "C"{
@@ -13,6 +16,7 @@ extern "C"{
 }
 
 Periphs periphs;
+DeviceModel deviceModel = { CONTROLLER_STARTUP };
 
 static bool needsRedraw[5] = {true, true, true, true, true};
 void drawMockupUI(uint8_t display, uint8_t num)
@@ -62,12 +66,14 @@ void setup()
   delay(500);
   digitalWrite(LED_BUILTIN, LOW);
   delay(500);
+
+  cSession::init();
 }
 
 static uint8_t lastPos[4];
 void loop()
 {
-  // periphs.scan();
+  periphs.scan();
   for (uint8_t i = 0; i < 4; i++) { periphs.buttons[i].update(); }  // In the meantime...
 
 

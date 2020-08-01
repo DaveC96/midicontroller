@@ -23,13 +23,11 @@ public:
     void initDisplays();
     void scan();
 
-    void testCallback();
-    void (* callback)();
-
     TCA9548A oledMux;
     U8G2_SSD1306_128X64_NONAME_F_HW_I2C * oled;
 
-    std::function<void()> onButtonPressed[NUM_CONTROLLERS];
+    std::function<void(uint8_t)> onButtonPressed[NUM_CONTROLLERS];
+    std::function<void(uint8_t)> onEncoderChanged[NUM_CONTROLLERS];
 
     Bounce buttons[NUM_CONTROLLERS];
     bool buttonStates[NUM_CONTROLLERS];

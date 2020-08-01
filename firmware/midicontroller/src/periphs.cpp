@@ -17,13 +17,6 @@ uint8_t scaleEncoder(uint16_t val)
 //          ---         ---         ---         ---         //
 
 
-void Periphs::testCallback() {
-    this->oledMux.openAll();
-    this->oled->drawStr(2, 64, millis());
-    this->oled->sendBuffer();
-    this->oledMux.closeAll();
-}
-
 Periphs::Periphs()
 {
     pinMode(PIN_BUT_1, INPUT_PULLUP);
@@ -40,7 +33,7 @@ Periphs::Periphs()
     pinMode(PIN_ENC_4B, INPUT_PULLUP);
 
     Wire.begin();
-    static U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(U8G2_R2, /* reset=*/ U8X8_PIN_NONE);
+    static U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(ROTATION, /* reset=*/ U8X8_PIN_NONE);
     this->oled = &oled;
     this->oledMux.begin(Wire);
     this->initDisplays();
@@ -54,7 +47,7 @@ Periphs::Periphs()
     for (uint8_t i = 0; i < NUM_CONTROLLERS; i++) {
         this->buttons[i] = Bounce();
         this->buttons[i].interval(5);
-        this->onButtonPressed[i] = std::bind(&Periphs::testCallback, this);
+        // this->onButtonPressed[i] = std::bind(&Periphs::testCallback, this);
     }
     this->buttons[0].attach(PIN_BUT_1);
     this->buttons[1].attach(PIN_BUT_2);
@@ -76,9 +69,6 @@ Periphs::Periphs()
     this->encoders[3] = &e4;
     this->oled->drawStr(110, 30, "OK!");
     this->oled->sendBuffer();
-
-    // this->callback = this->testCallback;
-
 }
 
 void Periphs::initDisplays()
@@ -97,8 +87,7 @@ void Periphs::scan() //TODO
         uint8_t event = EVENT_NONE;
         this->buttons[i].update();
         if (this->buttons[i].fell()) {
-            // this->onButtonPressed[i]();
-            (*this->callback)();
+            this->onButtonPressed[i](i);
         }
     }
 }

@@ -46,5 +46,10 @@
 static const uint8_t oleds[5] = { OLED_LL, OLED_L, OLED_R, OLED_RR, OLED_C };
 
 
+//      --      Controllers
+#define CONTROLLER_STARTUP  0
+#define CONTROLLER_SESSION  1
+#define CONTROLLER_MENU     2
+
 
 #endif
