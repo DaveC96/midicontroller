@@ -10,9 +10,13 @@ public:
     DeviceModel();
 
     void setCurrentController(uint8_t);
-private:
-    uint8_t currentController;
+    uint8_t getCurrentLayer();
+
     ControllerModel midiControllers[NUM_CONTROLLERS];
+
+private:
+    uint8_t currentLayer;
+    uint8_t currentController;
 };
 
 #endif
