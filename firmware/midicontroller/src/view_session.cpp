@@ -7,7 +7,7 @@ void sessionView::drawUI(uint8_t display, uint8_t num)
     periphs.oledMux.openChannel(oleds[display]);
     char buf[7];
     itoa(num, buf, 10);
-    if (needsRedraw[display]) {
+    if (/*needsRedraw[display]*/ 1) {
         //  Fetch variables from interface's model
         uint8_t layer = deviceModel.getCurrentLayer();
         const char * label = deviceModel.midiControllers[display].getUserLabel(layer).c_str();

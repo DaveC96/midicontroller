@@ -75,7 +75,7 @@ std::vector<uint8_t> ControllerModel::serialise()
     std::vector<uint8_t> buf;
     for (uint8_t layer = 0; layer < NUM_LAYERS; layer++)
     {
-        const char * characters = this->userLabel[layer].data();
+        const char * characters = this->userLabel[layer].c_str();
         buf.push_back(this->userLabel[layer].size());
         for (uint8_t i = 0; i < this->userLabel[layer].size(); i++)
         {

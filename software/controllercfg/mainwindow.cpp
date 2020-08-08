@@ -130,19 +130,23 @@ void MainWindow::on_c4_spinboxMax_valueChanged()    {   this->setControllerMax(3
 void MainWindow::on_glob_buttonWrite_clicked()
 {
     std::vector<std::vector<uint8_t>> packets;
-//    for (uint8_t controller = 0; controller < 1; controller++)
-//    {
-//        packets.push_back(generateXferData(this->model->controllers[controller].serialise()));
-//    }
-//    for (uint8_t controller = 0; controller < 1; controller++)
-//    {
-//        model->midiOut->sendMessage(&packets[controller]);
-//        ui->glob_textBrowser->append(QString("Sent config for controller ").append(QString::number(controller+1)));
-//    }
-    packets.push_back(generatePrep(2));
-//    model->midiOut->sendMessage(&packets[0]);
 
-    model->controllers[1].deserialise(packets[0]);
+    for (uint8_t controller = 0; controller < 1; controller++)
+    {
+        std::vector<uint8_t> data = this->model->controllers[controller].serialise();
+        std::cout << "Test";
+        packets.push_back(generateXferData(this->model->controllers[controller].serialise()));
+    }
+
+    for (uint8_t controller = 0; controller < 1; controller++)
+    {
+        model->midiOut->sendMessage(&packets[controller]);
+        ui->glob_textBrowser->append(QString("Sent config for controller ").append(QString::number(controller+1)));
+    }
+    packets.push_back(generatePrep(2));
+    model->midiOut->sendMessage(&packets[0]);
+
+//    model->controllers[1].deserialise(packets[0]);
 }
 
 void MainWindow::on_glob_buttonLoad_clicked()
