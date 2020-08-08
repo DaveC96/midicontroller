@@ -1,6 +1,8 @@
 #ifndef CONSTS_H
 #define CONSTS_H
 
+#include <stdint.h>
+
 #define NUM_LAYERS      8
 #define NUM_CONTROLLERS 4
 

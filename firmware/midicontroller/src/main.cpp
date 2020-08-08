@@ -15,7 +15,7 @@ extern "C"{
   int _write(){ return -1; }
 }
 
-DeviceModel deviceModel = { CONTROLLER_STARTUP };
+static DeviceModel deviceModel;
 
 
 void setup()
