@@ -15,18 +15,18 @@
 
 //  ==      ==      ==      Pin assignments
 //      --      Encoders
-#define PIN_BUT_1   33
-#define PIN_ENC_1A  35
-#define PIN_ENC_1B  34
-#define PIN_BUT_2   36
-#define PIN_ENC_2A  38
-#define PIN_ENC_2B  37
-#define PIN_BUT_3   39
-#define PIN_ENC_3A  41
-#define PIN_ENC_3B  40
-#define PIN_BUT_4   20
-#define PIN_ENC_4A  22
-#define PIN_ENC_4B  21
+#define PIN_BUT_1   4
+#define PIN_ENC_1A  3
+#define PIN_ENC_1B  2
+#define PIN_BUT_2   7
+#define PIN_ENC_2A  6
+#define PIN_ENC_2B  5
+#define PIN_BUT_3   21
+#define PIN_ENC_3A  23
+#define PIN_ENC_3B  22
+#define PIN_BUT_4   15
+#define PIN_ENC_4A  16
+#define PIN_ENC_4B  17
 //      --      I2C
 #define ADDR_MUX    119
 #define PIN_MUX_SCL 19
@@ -40,11 +40,11 @@
 #define PIN_OLED_4_SCL  5
 #define PIN_OLED_4_SDA  5
 //      --      Mux outputs
-#define OLED_LL  5
+#define OLED_LL  3
 #define OLED_L   4
-#define OLED_R   3
-#define OLED_RR  2
-#define OLED_C   6
+#define OLED_R   5
+#define OLED_RR  6
+#define OLED_C   7
 static const uint8_t oleds[5] = { OLED_LL, OLED_L, OLED_R, OLED_RR, OLED_C };
 
 

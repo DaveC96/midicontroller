@@ -3,7 +3,8 @@
 
 #include "view_session.h"
 
-#define ROTATION U8G2_R0
+#define ROTATION_CHANNELS   U8G2_R2
+#define ROTATION_MENU       U8G2_R1
 #define PIN_CLOCK 19
 #define PIN_DATA 18
 #define PIN_BUTTON 33
@@ -45,7 +46,7 @@ Periphs::Periphs()
     pinMode(PIN_ENC_4B, INPUT_PULLUP);
 
     Wire.begin();
-    static U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(ROTATION, /* reset=*/ U8X8_PIN_NONE);
+    static U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(ROTATION_CHANNELS, /* reset=*/ U8X8_PIN_NONE);
     this->oled = &oled;
     this->oledMux.begin(Wire);
     this->initDisplays();
